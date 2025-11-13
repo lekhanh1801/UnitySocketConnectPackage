@@ -5,25 +5,20 @@ using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 using UnityEngine;
+using WebSocketClientPackage.WebSocketClientPackage.Runtime.connections;
 
 namespace WebSocketClientPackage.Runtime.connections
 {
-    public abstract class Connection<TSocket, TSocketState> where TSocket : class
+    public abstract class Connection<TSocket, TSocketState> : IConnection               
+        where TSocket : class
     {
         #region Events
-
-        public event Action<string> OnMessageReceived;
-
-        public event Action<byte[]> OnBinaryMessageReceived;
-
-        public event Action OnConnected;
-
-        public event Action OnDisconnected;
-
-        public event Action<string> OnError;
-
-        public event Action<int> OnReconnecting;
-
+        public virtual event Action<string> OnMessageReceived;
+        public virtual event Action<byte[]> OnBinaryMessageReceived;
+        public virtual event Action OnConnected;
+        public virtual event Action OnDisconnected;
+        public virtual event Action<string> OnError;
+        public virtual event Action<int> OnReconnecting;
         #endregion
 
         #region Private Fields

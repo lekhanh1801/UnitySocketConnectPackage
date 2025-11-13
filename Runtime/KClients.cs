@@ -8,6 +8,7 @@ using WebSocketClientPackage.Runtime.ios;
 using WebSocketClientPackage.Runtime.managers;
 using WebSocketClientPackage.Runtime.utils;
 using WebSocketClientPackage.Runtime.models;
+using WebSocketClientPackage.WebSocketClientPackage.Runtime.connections;
 
 namespace WebSocketClientPackage.Runtime
 {
@@ -134,6 +135,22 @@ namespace WebSocketClientPackage.Runtime
                 default:
                     break;
             }
+        }
+
+        public IConnection ClientConnection()
+        {
+            switch (_clientState)
+            {
+                case ClientState.SOCKET_CLIENT:
+                    return _socketClient;
+                case ClientState.WS_CLIENT:
+                    return _wsClient;
+                case ClientState.WSS_CLIENT:
+                    return _wssClient;
+                default:
+                    break;
+            }
+            return _wsClient;
         }
 
         public SocketClientConnection SocketClient
