@@ -25,7 +25,7 @@ namespace WebSocketClientPackage.Runtime.managers
         /// </summary>
         public void Init()
         {
-            AddServerResponseHandler<MatchingCompleteHandler>(StaticRequest.MASTER_MATCHING);
+            // AddServerResponseHandler<MatchingCompleteHandler>(StaticRequest.MASTER_MATCHING);
             // AddClientRequestHandler<PingHandler>(StaticRequest.PING);
             // AddClientRequestHandler<MasterMatchingHandler>(StaticRequest.MASTER_MATCHING);
         }
