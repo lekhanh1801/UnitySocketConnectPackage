@@ -1,0 +1,26 @@
+{
+  "name": "com.server.websocket.gameclientconnect",
+  "displayName": "WebSocket_Client_Connect",
+  "version": "1.0.0",
+  "description": "A robust WebSocket client library for Unity game development with server communication capabilities.",
+  "keywords": [
+    "gameclientconnect"
+  ],
+  "category": "Network",
+  "author": {
+    "name": "Thanh Dat",
+    "email": "thanhdat18222@gmail.com"
+  },
+  "dependencies": {
+    "com.unity.nuget.newtonsoft-json": "3.0.2"
+  },
+  "samples": [
+    {
+      "displayName": "Basic WebSocket Example",
+      "description": "Basic example showing how to connect to a WebSocket server",
+      "path": "Samples/ExampleScene"
+    }
+  ],
+  "unity": "2022.3",
+  "unityRelease": "41f1"
+}
