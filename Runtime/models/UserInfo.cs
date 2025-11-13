@@ -20,5 +20,9 @@ namespace WebSocketClientPackage.Runtime.models
         public int rm;
         public int lv;
         public long coin;
+        public int rmd;
+        public int cci;
+        public int cbi;
+        public int cp;
     }
 }
