@@ -25,19 +25,19 @@ namespace WebSocketClientPackage.Runtime.ios
         /// </summary>
         public void OnConnected()
         {
-            if (MatchingManager.Instance.IsSuccessMatch)
-            {
-                return;
-            }
-
-            uint timeStamp = (uint) DateTimeOffset.UtcNow.ToUnixTimeMilliseconds();
-            KingMessage kMsg = new KingMessage();
-            kMsg.SetDirection(StaticController.SYSTEM_CONTROLLER, 19);
-            kMsg.WriteUInt32(timeStamp);
-            string sign = "longbutshort" + timeStamp + 33127;
-            kMsg.WriteString("");
-            kMsg.WriteString(HashUtils.Sha256(sign));
-            KingHelper.Send(kMsg);
+            // if (MatchingManager.Instance.IsSuccessMatch)
+            // {
+            //     return;
+            // }
+            //
+            // uint timeStamp = (uint) DateTimeOffset.UtcNow.ToUnixTimeMilliseconds();
+            // KingMessage kMsg = new KingMessage();
+            // kMsg.SetDirection(StaticController.SYSTEM_CONTROLLER, 19);
+            // kMsg.WriteUInt32(timeStamp);
+            // string sign = "longbutshort" + timeStamp + 33127;
+            // kMsg.WriteString("");
+            // kMsg.WriteString(HashUtils.Sha256(sign));
+            // KingHelper.Send(kMsg);
         }
 
         /// <summary>
