@@ -30,7 +30,7 @@ namespace WebSocketClientPackage.Runtime.utils
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
         public static void Initialize()
         {
-            LoadFromJson(Path.Combine(Application.streamingAssetsPath, "configuration/configuration.json"));
+            LoadFromJson(Path.Combine(Application.dataPath, "configuration/configuration.json"));
         }
 
         public static void LoadFromJson(string jsonFilePath)
