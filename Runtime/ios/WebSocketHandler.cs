@@ -30,14 +30,14 @@ namespace WebSocketClientPackage.Runtime.ios
             //     return;
             // }
             //
-            uint timeStamp = (uint) DateTimeOffset.UtcNow.ToUnixTimeMilliseconds();
-            KingMessage kMsg = new KingMessage();
-            kMsg.SetDirection(StaticController.SYSTEM_CONTROLLER, 19);
-            kMsg.WriteUInt32(timeStamp);
-            string sign = "longbutshort" + timeStamp + 33127;
-            kMsg.WriteString("");
-            kMsg.WriteString(HashUtils.Sha256(sign));
-            KingHelper.Send(kMsg);
+            // uint timeStamp = (uint) DateTimeOffset.UtcNow.ToUnixTimeMilliseconds();
+            // KingMessage kMsg = new KingMessage();
+            // kMsg.SetDirection(StaticController.SYSTEM_CONTROLLER, 19);
+            // kMsg.WriteUInt32(timeStamp);
+            // string sign = "longbutshort" + timeStamp + 33127;
+            // kMsg.WriteString("");
+            // kMsg.WriteString(HashUtils.Sha256(sign));
+            // KingHelper.Send(kMsg);
         }
 
         /// <summary>
