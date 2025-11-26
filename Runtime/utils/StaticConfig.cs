@@ -30,21 +30,18 @@ namespace WebSocketClientPackage.Runtime.utils
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
         public static void Initialize()
         {
-            LoadFromJson(Path.Combine(Application.dataPath, "configuration/configuration.json"));
+            LoadFromJson();
         }
 
-        public static void LoadFromJson(string jsonFilePath)
+        public static void LoadFromJson()
         {
             try
             {
-                if (!File.Exists(jsonFilePath))
-                {
-                    Debug.LogWarning($"Config file not found: {jsonFilePath}");
-                    return;
-                }
+                Debug.LogError("test");
+                TextAsset textFile = Resources.Load<TextAsset>("configuration/configuration");
 
-                string jsonContent = File.ReadAllText(jsonFilePath);
-                var configData = JsonUtility.FromJson<ConfigData>(jsonContent);
+                string jsoncontent = textFile.text;
+                var configData = JsonUtility.FromJson<ConfigData>(jsoncontent);
 
                 // Gán giá trị từ JSON vào các static properties
                 GAME_NAME = configData.GAME_NAME ?? GAME_NAME;
