@@ -24,5 +24,6 @@ namespace WebSocketClientPackage.Runtime.models
         public int cci;
         public int cbi;
         public string cp;
+        public int gm;
     }
 }
