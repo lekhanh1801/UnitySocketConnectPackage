@@ -57,7 +57,7 @@ namespace WebSocketClientPackage.Runtime.ios
             // Debug.Log($"requestId: {requestId}");
             // Debug.Log("-------------------------------------------------");
 
-            HandlerManager.Instance.HandleServerRespone(kMsg);
+            HandlerManager.Instance.HandleServerResponse(kMsg);
         }
 
         /// <summary>

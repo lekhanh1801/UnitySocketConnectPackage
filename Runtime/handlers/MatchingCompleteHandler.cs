@@ -13,39 +13,24 @@ namespace WebSocketClientPackage.Runtime.handlers
     {
         public async void HandleServerRespone(KingMessage msg)
         {
-            string roomName = "";
-            MatchingManager.Instance.IsSuccessMatch = msg.ReadBool();
-            int matchUserListLength = msg.ReadUInt8();
-            List<UserInfo> matchUserList = new List<UserInfo>();
-            for (int i = 0; i < matchUserListLength; i++)
-            {
-                UserInfo userInfo = new UserInfo()
-                {
-                    uid = msg.ReadUInt32().ToString(),
-                    lv = msg.ReadUInt8(),
-                    sex = msg.ReadUInt8(),
-                    dn = msg.ReadUtf8String(),
-                    avt = msg.ReadUtf8String(),
-                    coin = msg.ReadUInt32(),
-                    rn = msg.ReadUtf8String()
-                };
-                matchUserList.Add(userInfo);
-                roomName = userInfo.rn;
-            }
+            // var playerId = msg.ReadUInt8();
+            // var userId = msg.ReadUInt32();
+            // var displayName = msg.ReadUtf8String();
+            // var avatarUrl = msg.ReadUtf8String();
+            // var countryCode = msg.ReadUInt8();
+            // var booster = msg.ReadUInt8();
+            // var trophy = msg.ReadUInt32();
+            // var teamName = msg.ReadUtf8String();
+            //
+            // Debug.LogWarning("playerId "+playerId);
+            // Debug.LogWarning("userId "+userId);
+            // Debug.LogWarning("displayName "+displayName);
+            // Debug.LogWarning("avatarUrl "+avatarUrl);
+            // Debug.LogWarning("countryCode "+countryCode);
+            // Debug.LogWarning("booster "+booster);
+            // Debug.LogWarning("trophy "+trophy);
+            // Debug.LogWarning("teamName "+teamName);
 
-            if (MatchingManager.Instance.IsSuccessMatch)
-            {
-                await KClients.Instance.CloseAsync();
-                string json = "{\"uid\":\"33127\",\"cur\":\"usdt\",\"ipf\":true,\"cn\":\"1\",\"dn\":\"phahl004\",\"avt\":\"\",\"isBot\":false,\"isAdmin\":false,\"pid\":0,\"lang\":\"en\",\"utid\":0,\"vip\":1}";
-                UserInfo user = JsonUtility.FromJson<UserInfo>(json);
-                user.rn = roomName;
-                user.rm = 1;
-                new Thread( async () =>
-                {
-                    Thread.Sleep(100);
-                    await KClients.Instance.ConnectToServer(user);
-                }).Start();
-            }
         }
     }
 }

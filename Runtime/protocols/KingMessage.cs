@@ -635,7 +635,7 @@ public class KingMessage
             {
                 breakIndex = i;
                 break;
-            }
+            }                                                                  
         }
 
         if (breakIndex != -1)

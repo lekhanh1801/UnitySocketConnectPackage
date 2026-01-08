@@ -37,7 +37,6 @@ namespace WebSocketClientPackage.Runtime.utils
         {
             try
             {
-                Debug.LogError("test");
                 TextAsset textFile = Resources.Load<TextAsset>("configuration/configuration");
 
                 string jsoncontent = textFile.text;

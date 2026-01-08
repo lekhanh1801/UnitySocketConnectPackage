@@ -285,7 +285,7 @@ namespace WebSocketClientPackage.Runtime.Connections
                     if (result.MessageType == WebSocketMessageType.Close)
                     {
                         Debug.Log("[WebSocket] Server requested closure");
-                        await CloseAsync("Server closed connection");
+                        // await CloseAsync("Server closed connection");
                         break;
                     }
 

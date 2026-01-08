@@ -27,7 +27,7 @@ namespace WebSocketClientPackage.Runtime.managers
         /// </summary>
         public void Init()
         {
-            AddServerResponseHandler<MatchingCompleteHandler>(StaticRequest.MASTER_MATCHING);
+            // AddSystemResponseHandler<MatchingCompleteHandler>(7);
             // AddClientRequestHandler<PingHandler>(StaticRequest.PING);
             // AddClientRequestHandler<MasterMatchingHandler>(StaticRequest.MASTER_MATCHING);
         }
@@ -77,7 +77,7 @@ namespace WebSocketClientPackage.Runtime.managers
         /// <param name="user">KingUser</param>
         /// <param name="kMsg">KingMessage</param>
         /// <returns>True nếu xử lý thành công, false nếu không tìm thấy handler</returns>
-        public bool HandleServerRespone(KingMessage kMsg)
+        public bool HandleServerResponse(KingMessage kMsg)
         {
             try
             {
