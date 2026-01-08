@@ -286,7 +286,7 @@ namespace WebSocketClientPackage.Runtime.Connections
                     {
                         Debug.Log("[WebSocket] Server requested closure");
                         // await CloseAsync("Server closed connection");
-                        break;
+                        // break;
                     }
 
                     // Add received data to message buffer
